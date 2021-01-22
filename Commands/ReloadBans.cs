@@ -24,8 +24,8 @@ namespace Easy_UnBan.Commands
             bool Ipbans = true;
             bool Idbans = true;
 
-            string[] IpBansTxt = File.ReadAllLines(plugin.Singleton.Config.ServerDir + @"\IpBans.txt");
-            string[] IdBansTxt = File.ReadAllLines(plugin.Singleton.Config.ServerDir + @"\UserIdBans.txt");
+            string[] IpBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.IP));
+            string[] IdBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.UserId));
 
             List<BannedUserInfo> BannedUserIds = new List<BannedUserInfo>();
             List<BannedUserInfo> BannedUserIps = new List<BannedUserInfo>();

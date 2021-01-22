@@ -16,20 +16,11 @@ namespace Easy_Unban
 
         public override void OnEnabled()
         {
-
-            if (!Directory.Exists(Config.ServerDir))
-            {
-                Log.Error("The server directory is invalid! please set it in the EXILED Config file to the dedicated server (do not include port).");
-                Log.Error("The server directory is invalid! please set it in the EXILED Config file to the dedicated server (do not include port).");
-                Log.Error("The server directory is invalid! please set it in the EXILED Config file to the dedicated server (do not include port).");
-                return;
-            }
-
             bool Ipbans = true;
             bool Idbans = true;
 
-            string[] IpBansTxt = File.ReadAllLines(Config.ServerDir + @"\IpBans.txt");
-            string[] IdBansTxt = File.ReadAllLines(Config.ServerDir + @"\UserIdBans.txt");
+            string[] IpBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.IP));
+            string[] IdBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.UserId));
 
             List<BannedUserInfo> BannedUserIds = new List<BannedUserInfo>();
             List<BannedUserInfo> BannedUserIps = new List<BannedUserInfo>();

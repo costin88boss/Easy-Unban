@@ -10,10 +10,6 @@ namespace Easy_Unban
         [Description("Should the plugin be enabled?")]
         public bool IsEnabled { get; set; } = true;
 
-        [Description("The directory to the server configurations that includes the Banned users text files. replace \"PUT USER HERE\" with the user you are currently using your pc. Server port is automatically detected.")]
-        public string ServerDir { get; set; } = @"C:\Users\[PUT USER HERE]\AppData\Roaming\SCP Secret Laboratory\config\" + Server.Port;
-
-
         [Description("---ListBans command--- (Command info)")]
         public string ListBansCmd { get; set; } = "ListBans";
         public string ListBansCmdInfo { get; set; } = "Shows a list of ID and IP bans. Use the number on the left of a user with \"PardonNum\" to unban him easier in case of stuff like Unicode.";

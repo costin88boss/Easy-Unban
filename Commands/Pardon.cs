@@ -18,7 +18,7 @@ namespace Easy_Unban
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
-
+            BanHandler.GetPath(BanHandler.BanType.IP);
             if (arguments.Count != 0)
             {
                 response = plugin.Singleton.Config.PardonCmdRunningMsg;
@@ -28,8 +28,8 @@ namespace Easy_Unban
                 string STEAMID = "";
                 string USERIP = "";
 
-                string[] IpBansTxt = File.ReadAllLines(plugin.Singleton.Config.ServerDir + Server.Port + @"\IpBans.txt");
-                string[] IdBansTxt = File.ReadAllLines(plugin.Singleton.Config.ServerDir + Server.Port + @"\UserIdBans.txt");
+                string[] IpBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.IP));
+                string[] IdBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.UserId));
 
                 List<BannedUserInfo> BannedUserIds = new List<BannedUserInfo>();
                 List<BannedUserInfo> BannedUserIps = new List<BannedUserInfo>();
