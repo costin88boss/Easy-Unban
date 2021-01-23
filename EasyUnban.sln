@@ -1,16 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyUnban", "EasyUnban\EasyUnban.csproj", "{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30223.230
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyUnban", "EasyUnban\EasyUnban.csproj", "{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}.Debug|x64.ActiveCfg = Debug|x64
+		{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}.Debug|x64.Build.0 = Debug|x64
 		{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}.Release|x64.ActiveCfg = Release|x64
+		{09251F1F-BD35-43B8-8D0A-9AC50F58B5E0}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F05BE48E-B43B-49D2-A7D1-BC1ACC788217}
 	EndGlobalSection
 EndGlobal
