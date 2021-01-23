@@ -7,6 +7,10 @@
     {
         [Description("Should the plugin be enabled?")]
         public bool IsEnabled { get; set; } = true;
+        [Description("Set whetever or not the plugin will detect the ban list files or you can assign your location.")]
+        public bool ManualDirectory { get; private set; } = false;
+        public string ManualIpBanDirectory { get; private set; } = @"C:\Users\[yourname]\AppData\Roaming\SCP Secret Laboratory\config\7777\UserIdBans.txt [NOTE THIS IS AN EXAMPLE]";
+        public string ManualIdBanDirectory { get; private set; } = @"C:\Users\[yourname]\AppData\Roaming\SCP Secret Laboratory\config\7777\IpBans.txt [NOTE THIS IS AN EXAMPLE]";
 
         [Description("---ListBans command--- (Command info)")]
         public string ListBansCmd { get; private set; } = "ListBans";
@@ -18,8 +22,8 @@
 
         [Description("---ListBans command--- (Command messages)")]
         public string ListBansCmdShowingListMsg { get; private set; } = "Showing list..";
-
-        public string ListBansCmdShowingIdList { get; private set; } = "---Id bans---";
+        [Description("{BanType} will be replaced with the ban type for the 2 lists.")]
+        public string ListBansCmdShowingIdList { get; private set; } = "---{BanType} bans---";
 
         [Description(
             "This is how the ListBans commands aligns the users numbers and their names. use {BanNumber} and {PlayerName}.")]
@@ -35,7 +39,7 @@
         public string PardonCmdInfo { get; private set; } =
             "Pardon the user from both Ip and UserId Ban lists, by simply inputting his username. (won't work for Unicode users :( )";
 
-        public string[] PardonCmdAliases { get; private set; } = {"Prdn"};
+        public string[] PardonCmdAliases { get; private set; } = { "Prdn" };
 
         [Description("---Pardon command--- (Command messages)")]
 
@@ -55,7 +59,7 @@
         public string PardonNumCmdInfo { get; private set; } =
             "Pardon the User using a simple number that you get in the \"ListBans\" command. make sure you execute \"ReloadBans\" if user is missing but you know he is banned.";
 
-        public string[] PardonNumCmdAliases { get; private set; } = {"prdN", "prdnum", "PardonN"};
+        public string[] PardonNumCmdAliases { get; private set; } = {"prdnum", "PardonN"};
 
         [Description("---PardonNum command--- (Command messages)")]
 

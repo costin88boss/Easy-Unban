@@ -1,6 +1,7 @@
 ﻿namespace EasyUnban.Commands
 {
     using CommandSystem;
+    using Exiled.API.Features;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -22,8 +23,30 @@
             bool ipBans = true;
             bool idBans = true;
 
-            string[] ipBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.IP));
-            string[] idBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.UserId));
+            string[] ipBansTxt;
+            string[] idBansTxt;
+
+            if (EasyUnban.Singleton.Config.ManualDirectory == false)
+            {
+                ipBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.IP));
+                idBansTxt = File.ReadAllLines(BanHandler.GetPath(BanHandler.BanType.UserId));
+            }
+            else
+            {
+                try
+                {
+                    ipBansTxt = File.ReadAllLines(EasyUnban.Singleton.Config.ManualIpBanDirectory);
+                    idBansTxt = File.ReadAllLines(EasyUnban.Singleton.Config.ManualIdBanDirectory);
+                }
+                catch
+                {
+                    Log.Error("MANUAL IP OR ID DIRECTORIES DOES NOT EXIST! DOES THE FILE EXISTS AT LEAST??");
+                    Log.Error("MANUAL IP OR ID DIRECTORIES DOES NOT EXIST! DOES THE FILE EXISTS AT LEAST??");
+                    Log.Error("MANUAL IP OR ID DIRECTORIES DOES NOT EXIST! DOES THE FILE EXISTS AT LEAST??");
+                    response = "ERROR: could not update! the Manual directories are invalid in config file!";
+                    return false;
+                }
+            }
 
             List<BannedUserInfo> bannedUserIds = new List<BannedUserInfo>();
             List<BannedUserInfo> bannedUserIps = new List<BannedUserInfo>();

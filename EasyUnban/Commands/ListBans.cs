@@ -17,7 +17,7 @@
             response = EasyUnban.Singleton.Config.ListBansCmdShowingListMsg;
             if (EasyUnban.IdBans != null)
             {
-                response += "\n" + EasyUnban.Singleton.Config.ListBansCmdShowingIdList;
+                response += "\n" + EasyUnban.Singleton.Config.ListBansCmdShowingIdList.Replace("{BanType}", "UserId");
                 for (int i = 0; i < EasyUnban.IdBans.Count; i++)
                 {
                     string message = EasyUnban.Singleton.Config.ListBansCmdBanList
@@ -30,7 +30,7 @@
 
             if (EasyUnban.IpBans != null)
             {
-                response += "\n---Ip banuri---";
+                response += "\n" + EasyUnban.Singleton.Config.ListBansCmdShowingIdList.Replace("{BanType}", "Ip");
                 for (int i = 0; i < EasyUnban.IpBans.Count; i++)
                 {
                     string message = EasyUnban.Singleton.Config.ListBansCmdBanList

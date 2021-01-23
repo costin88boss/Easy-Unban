@@ -2,6 +2,16 @@
 
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
+        <Platforms>AnyCPU;x64</Platforms>
+        <AssemblyVersion>1.1.1.5</AssemblyVersion>
+        <FileVersion>1.1.1.5</FileVersion>
+        <Description>Unban easily with this plugin!</Description>
+        <RepositoryUrl>https://github.com/costin88boss/Easy-Unban</RepositoryUrl>
+        <Copyright>Copyright © Costinos 2021</Copyright>
+        <Authors>Costin</Authors>
+        <Company></Company>
+        <Product>Easy UnBan</Product>
+        <PackageId>Easy UnBan</PackageId>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -9,26 +19,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\..\SubclassItems-2.0\Compile\bin\Release\net472\Assembly-CSharp-Publicized.dll</HintPath>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>..\..\Assembly-CSharp.dll</HintPath>
       </Reference>
-      <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\..\SubclassItems-2.0\Compile\bin\Release\net472\CommandSystem.Core.dll</HintPath>
+      <Reference Include="CommandSystem.Core">
+        <HintPath>..\..\scpslserver\SCPSL_Data\Managed\CommandSystem.Core.dll</HintPath>
       </Reference>
-      <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\..\SubclassItems-2.0\Compile\bin\Release\net472\Mirror.dll</HintPath>
+      <Reference Include="Exiled.API">
+        <HintPath>..\..\Random Garbage\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
       </Reference>
-      <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\..\SubclassItems-2.0\Compile\bin\Release\net472\UnityEngine.CoreModule.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="EXILED" Version="2.1.28" />
-      <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
     </ItemGroup>
 
 </Project>
